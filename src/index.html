@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+  <head>
+    <title><%= json.project.title %></title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <%= t.include("partials/_head.html") %>
+    <%= t.include("partials/_analytics.html") %>
+  </head>
+  <script>  var HDN = HDN || {}  </script>
+
+  <body>
+
+    <%= t.include("partials/_nav.html") %>
+
+    <div class="title-container">
+    <div class="background-img">
+        <div class="dim"></div>
+        <div class="over-img">
+          <h1 class="title long">30 years of restaurant innovation</h1>
+          <div class="deck">Michael Bauer’s timeline of Bay Area dining history</div>
+          <p class="author">By Michael Bauer</a></p>
+          <p class="date">September 2016</p>
+        </div>
+      </div>
+    </div>
+    <p class="caption landing">This is a caption.<span class="byline"> Person Person, The Chronicle</span></p>
+
+    <div class="timeline">
+      <% csv.restaurantData.forEach(function(restaurant) { %>
+        <div class="rest-group">
+          <div class="rest-yr"><%= restaurant.year %></div>
+          <div class="rest-name"><%= restaurant.name %></div>
+          <div class="rest-text"><%= restaurant.text %></div>
+        </div>
+      <% }); %>
+    </div>
+
+    <br></br>
+
+    <%= t.include("partials/_footer.html") %>
+
+    <script src="app.js" async></script>
+    <%= t.include("partials/_helloSFC.html") %>
+
+  </body>
+</html>
