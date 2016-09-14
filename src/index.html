@@ -29,9 +29,11 @@
     </div>
     <p class="caption landing">This is a caption.<span class="byline"> Person Person, The Chronicle</span></p>
 
-    <div class="timeline">
-      <% csv.restaurantData.forEach(function(restaurant) { %>
-        <div class="rest-group">
+    <div id="stick-here"></div>
+
+    <div class="timeline" id="timeline">
+      <% csv.restaurantData.forEach(function(restaurant,idx) { %>
+        <div class="rest-group" id= <%= restaurant.year %> >
           <div class="rest-yr"><%= restaurant.year %></div>
           <div class="rest-name"><%= restaurant.name %></div>
           <div class="rest-text"><%= restaurant.text %></div>

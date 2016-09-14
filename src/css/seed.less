@@ -332,6 +332,7 @@ footer {
     opacity: 1;
     height: 20px;
   }
+  margin-top: 5px;
 }
 
 .link, .logo-link {
@@ -560,6 +561,9 @@ header {
   font-family: @block-graphics;
   .rest-group {
     margin: 20px;
+    &.active {
+      color: red;
+    }
   }
   .rest-yr {
     font-family: @bold-graphics;
@@ -582,4 +586,19 @@ header {
   margin: auto;
   border-bottom: 1px @dark-gray solid;
   height: 2px;
+}
+
+.deck {
+  font-size: 23px;
+  text-align: center;
+  @media @tablet {
+    font-size: 18px;
+  }
+  @media @mobile {
+    padding: 0 10px;
+  }
+}
+
+.over-img {
+  color: black;
 }
