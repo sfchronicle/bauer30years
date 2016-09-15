@@ -559,24 +559,43 @@ header {
   max-width: 900px;
   margin: auto;
   font-family: @block-graphics;
+  .runnerup-block {
+    margin-top: 10px;
+    .runnerup-hed {
+      margin: 5px 0;
+      font-family: @med-graphics;
+      font-style: italic;
+    }
+  }
   .rest-group {
     margin: 20px;
     &.active {
-      color: red;
+      .rest-yr {
+        font-size: 52px;
+        font-weight: bolder;
+        color: #1A436A;//#4D769D;
+      }
+      .rest-name {
+        font-family: @med-graphics;
+      }
     }
   }
   .rest-yr {
+    width: 200px;
+    text-align: center;
     font-family: @bold-graphics;
-    font-size: 50px;
+    font-size: 48px;
     margin: 10px;
     float: right;
+    color: #4D769D;//#80A9D0;
   }
   .rest-name {
-    font-family: @med-graphics;
+    font-family: @block-graphics;
+    // font-family: @med-graphics;
     font-size: 30px;
     padding-bottom: 10px;
   }
-  .rest-text {
+  .rest-text, .runnerup-text {
     font-size: 18px;
   }
 }
@@ -586,6 +605,9 @@ header {
   margin: auto;
   border-bottom: 1px @dark-gray solid;
   height: 2px;
+  &.small {
+    padding-top: 30px;
+  }
 }
 
 .deck {
@@ -601,4 +623,26 @@ header {
 
 .over-img {
   color: black;
+}
+
+.a-next {
+  clear: both;
+  max-width: 700px;
+  margin: 30px auto;
+}
+
+.next {
+  font-family: @banner;
+  background: @gray-blue;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  color: white;
+  text-align: center;
+  @media @mobile {
+    font-size: 18px;
+  }
+}
+
+.next:hover {
+  background: #2b4d70;
 }

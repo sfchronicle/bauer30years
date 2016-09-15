@@ -37,11 +37,28 @@
           <div class="rest-yr"><%= restaurant.year %></div>
           <div class="rest-name"><%= restaurant.name %></div>
           <div class="rest-text"><%= restaurant.text %></div>
+          <% if (restaurant.runnerup){ %>
+            <div class="runnerup-block">
+              <div class="runnerup-hed">Runner up: <%= restaurant.runnerup %></div>
+              <div class="runnerup-text"><%= restaurant.runnerup_text %></div>
+            </div>
+          <% } %>
+          <% if (restaurant.runnerup2){ %>
+            <div class="runnerup-block">
+              <div class="runnerup-hed">Runner up: <%= restaurant.runnerup2 %></div>
+              <div class="runnerup-text"><%= restaurant.runnerup2_text %></div>
+            </div>
+          <% } %>
+
+          <div class="divider small">
+          </div>
+
         </div>
       <% }); %>
     </div>
 
     <br></br>
+    <div class="a-next"><a href="http://www.google.com" id="next" class="anchor" target="_blank"><div class="next">Read the story</div></a></div>
 
     <%= t.include("partials/_footer.html") %>
 
