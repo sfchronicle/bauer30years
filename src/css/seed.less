@@ -565,10 +565,16 @@ header {
       margin: 5px 0;
       font-family: @med-graphics;
       font-style: italic;
+      @media @mobile {
+        font-size: 18px;
+      }
     }
   }
   .rest-group {
     margin: 20px;
+    @media @mobile {
+      margin: 20px 10px;
+    }
     &.active {
       .rest-yr {
         font-size: 52px;
@@ -588,15 +594,24 @@ header {
     margin: 10px;
     float: right;
     color: #4D769D;//#80A9D0;
+    @media @mobile {
+      margin: 0;
+    }
   }
   .rest-name {
     font-family: @block-graphics;
     // font-family: @med-graphics;
     font-size: 30px;
     padding-bottom: 10px;
+    @media @mobile {
+      font-size: 25px;
+    }
   }
   .rest-text, .runnerup-text {
     font-size: 18px;
+    @media @mobile {
+      font-size: 15px;
+    }
   }
 }
 
