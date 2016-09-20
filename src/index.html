@@ -29,14 +29,34 @@
     </div>
     <p class="caption landing">This is a caption.<span class="byline"> Person Person, The Chronicle</span></p>
 
+    <div class="intro">
+      It’s not often we take time to look back, reflect and see what brought us to our present day. On my 30th anniversary at The Chronicle, I’ve decided to do just that. I’ve compiled a year-by-year list of the restaurants that moved the dining scene forward, picking the most important restaurant from each of my 30 years. It’s not always the best restaurant of the year — or even the most prominent — but ones that offered something special and made the Bay Area the food epicenter it is today.
+      <div class="intro-sign">— Michael Bauer</div>
+    </div>
+
+
+    <div class="divider"></div>
+
     <div id="stick-here"></div>
 
     <div class="timeline" id="timeline">
       <% csv.restaurantData.forEach(function(restaurant,idx) { %>
         <div class="rest-group" id= <%= restaurant.year %> >
-          <div class="rest-yr"><%= restaurant.year %></div>
-          <div class="rest-name"><%= restaurant.name %></div>
+
+
+          <div class="rest-name">
+            <div class="rest-yr"><%= restaurant.year %></div>
+            <%= restaurant.name %>
+            <a id="twitter-icon" title="Share on Twitter" class="inline" href="https://twitter.com/intent/tweet?url=http%3A%2F%2Fprojects.sfchronicle.com%2F2016%2F<%= grunt.data.json.project.slug %>%23<%=restaurant.year%>&text=<%= grunt.data.json.project.twitter_text %>&hashtags=<%= grunt.data.json.project.hashtag %>">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </div>
+
+          <div class="rest-img"><img src= <%= restaurant.photo %>900x900.jpg></img></div>
+          <div class="caption">This is a caption.<%= restaurant.caption %> <span class="byline"><%= restaurant.photographer %>, The Chronicle</span></div>
+
           <div class="rest-text"><%= restaurant.text %></div>
+
           <% if (restaurant.runnerup){ %>
             <div class="runnerup-block">
               <div class="runnerup-hed">Runner up: <%= restaurant.runnerup %></div>

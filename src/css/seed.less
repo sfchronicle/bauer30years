@@ -389,8 +389,11 @@ header {
   text-align: left;
   font-family: @body;
   font-size: 12px;
-  margin-top: 5px;
-  padding: 0 10px;
+  // margin-top: 5px;
+  // padding: 0 10px;
+  padding-bottom: 20px;
+  padding-left: 0;
+  margin-top: 0;
   max-width: 100%;
   &.landing {
     margin-bottom: 2.5em;
@@ -525,9 +528,12 @@ header {
 .dont-miss {
   .display-flex;
   .flex-wrap(wrap);
-  margin-bottom: 20px;
   font-size: 17px;
   font-family: @block-graphics;
+  max-width: 900px;
+  margin: auto;
+  margin-top: 10px;
+  margin-bottom: 20px;
   @media @mobile {
     margin-bottom: 40px;
   }
@@ -555,62 +561,88 @@ header {
 // timeline styles -------------------------------------------------------------
 // -----------------------------------------------------------------------------
 
+.intro {
+  max-width: 900px;
+  margin: auto;
+  padding: 50px 0;
+  .intro-sign {
+    padding-top: 20px;
+    font-style: italic;
+  }
+  // text-align: center;
+}
+
 .timeline {
   max-width: 900px;
   margin: auto;
   font-family: @block-graphics;
+  @media @tablet {
+    margin: auto 20px;
+  }
+  @media @mobile {
+    margin: 0;
+  }
   .runnerup-block {
-    margin-top: 10px;
+    margin-top: 20px;
     .runnerup-hed {
       margin: 5px 0;
       font-family: @med-graphics;
-      font-style: italic;
+      // font-style: italic;
       @media @mobile {
         font-size: 18px;
       }
     }
   }
   .rest-group {
-    margin: 20px;
+    padding-top: 60px;
     @media @mobile {
       margin: 20px 10px;
     }
     &.active {
       .rest-yr {
-        font-size: 52px;
-        font-weight: bolder;
-        color: #1A436A;//#4D769D;
-      }
-      .rest-name {
-        font-family: @med-graphics;
+        font-family: @boldest-graphics;
+        color: #D13D59;//#1A436A;//#4D769D;
       }
     }
   }
+  .rest-img {
+    max-width: 600px;
+    padding-top: 20px;
+    img {
+      width: 100%;
+    }
+  }
   .rest-yr {
-    width: 200px;
+    // width: 100px;
     text-align: center;
-    font-family: @bold-graphics;
-    font-size: 48px;
-    margin: 10px;
-    float: right;
-    color: #4D769D;//#80A9D0;
+    font-family: @med-graphics;
+    // font-size: 42px;
+    // margin: 10px;
+    display: inline-block;
+    padding-right: 10px;
+    // float: right;
+    color: #FF8AA6;//#4D769D;//#80A9D0;
     @media @mobile {
-      width: 150px;
+      // width: 70px;
       margin: 0;
     }
   }
   .rest-name {
-    font-family: @block-graphics;
-    // font-family: @med-graphics;
+    // font-family: @block-graphics;
+    font-family: @med-graphics;
     font-size: 30px;
     padding-bottom: 10px;
     @media @mobile {
       font-size: 25px;
       padding-top: 15px;
     }
+    a {
+      padding-left: 10px;
+      font-size: 25px;
+    }
   }
   .rest-text, .runnerup-text {
-    font-size: 18px;
+    font-size: 16px;
     @media @mobile {
       font-size: 15px;
     }
