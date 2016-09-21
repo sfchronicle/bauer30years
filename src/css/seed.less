@@ -589,6 +589,7 @@ header {
     .runnerup-hed {
       margin: 5px 0;
       @media @mobile {
+        padding-bottom: 2px;
         font-size: 16px;
       }
     }
@@ -598,10 +599,8 @@ header {
     .display-flex;
     @media @mobile {
       padding-top: 40px;
-      // padding-top: 50px;
       clear: both;
       display: block;
-      // margin: 20px 10px;
     }
     &.active {
       .rest-name {
@@ -644,17 +643,10 @@ header {
       font-size: 25px;
     }
     .sticky-name {
-      // width: 12%;
       width: 200px;
       padding-right: 50px;
       position:fixed;
       top:100px;
-      @media @tablet-horiz {
-        width: 200px;
-      }
-      @media @tablet {
-        width: 200px;
-      }
       .rest-yr, .rest-title, .rest-tweet {
         @media @mobile {
           display: inline-block;
@@ -678,7 +670,6 @@ header {
       }
       @media @mobile {
         padding: 5px 0;
-        // display: inline-block;
         width: 100%;
         top:36px;
         background: lighten(@light-gray,5%);
@@ -694,8 +685,6 @@ header {
       padding: 10px;
     }
     .rest-img {
-      // max-width: 800px;
-      // padding-top: 20px;
       img {
         width: 100%;
       }
@@ -710,7 +699,7 @@ header {
 }
 
 .divider {
-  width: 80%;
+  width: 100%;
   margin: auto;
   border-bottom: 1px @dark-gray solid;
   height: 2px;
