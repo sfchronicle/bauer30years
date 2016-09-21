@@ -50,7 +50,7 @@ hr{
 }
 
 .max{
-  max-width:900px;
+  max-width:800px;
   margin:0 auto;
   padding:0 12px;
 }
@@ -211,7 +211,7 @@ footer {
 // heading styles ---------------------------------------
 
 .title-container {
-  background-image: url("../assets/photos/test-img.jpg");
+  // background-image: url("http://ww3.hdnux.com/photos/51/51/60/9760031/5/900x900.jpg");
 
   &.top-margin {
     margin-top: 3.5em;
@@ -562,18 +562,20 @@ header {
 // -----------------------------------------------------------------------------
 
 .intro {
-  max-width: 900px;
+  max-width: 800px;
   margin: auto;
   padding: 50px 0;
   .intro-sign {
     padding-top: 20px;
     font-style: italic;
   }
-  // text-align: center;
+  @media @tablet {
+    padding: 20px;
+  }
 }
 
 .timeline {
-  max-width: 900px;
+  max-width: 800px;
   margin: auto;
   font-family: @block-graphics;
   @media @tablet {
@@ -586,59 +588,101 @@ header {
     margin-top: 20px;
     .runnerup-hed {
       margin: 5px 0;
-      font-family: @med-graphics;
-      // font-style: italic;
       @media @mobile {
-        font-size: 18px;
+        font-size: 16px;
       }
     }
   }
   .rest-group {
     padding-top: 60px;
+    .display-flex;
     @media @mobile {
-      margin: 20px 10px;
+      padding-top: 40px;
+      // padding-top: 50px;
+      clear: both;
+      display: block;
+      // margin: 20px 10px;
     }
     &.active {
-      .rest-yr {
-        font-family: @boldest-graphics;
-        color: #D13D59;//#1A436A;//#4D769D;
+      .rest-name {
+        display: block;
+        visibility: visible;
+        text-align: right;
       }
     }
   }
-  .rest-img {
-    max-width: 600px;
-    padding-top: 20px;
-    img {
-      width: 100%;
-    }
-  }
+
   .rest-yr {
-    // width: 100px;
-    text-align: center;
-    font-family: @med-graphics;
-    // font-size: 42px;
-    // margin: 10px;
-    display: inline-block;
-    padding-right: 10px;
-    // float: right;
-    color: #FF8AA6;//#4D769D;//#80A9D0;
+    font-family: @boldest-graphics;
+    color: #D13D59;
     @media @mobile {
-      // width: 70px;
       margin: 0;
     }
   }
   .rest-name {
-    // font-family: @block-graphics;
-    font-family: @med-graphics;
+    // width: 20%;
+    .flex(0,0,20%);
+    @media @mobile {
+      .flex(0,0,100%);
+    }
+    margin-right: 5%;
+    position: relative;
+    visibility: hidden;
+    font-family: @block-graphics;
     font-size: 30px;
     padding-bottom: 10px;
-    @media @mobile {
-      font-size: 25px;
-      padding-top: 15px;
+    .rest-title {
+      @media @tablet-horiz {
+        font-size: 25px;
+      }
     }
     a {
       padding-left: 10px;
       font-size: 25px;
+    }
+    .sticky-name {
+      width: 15%;
+      position:fixed;
+      top:100px;
+      @media @tablet-horiz {
+        width: 15%;
+      }
+      @media @tablet {
+        width: 20%;
+      }
+      .rest-yr, .rest-title, .rest-tweet {
+        @media @mobile {
+          display: inline-block;
+          font-size: 18px;
+          padding-left: 10px;
+          float: left;
+          a {
+            font-size: 18px;
+          }
+        }
+      }
+      @media @mobile {
+        padding: 5px 0;
+        // display: inline-block;
+        width: 100%;
+        top:36px;
+        background: @light-gray;
+        opacity: 0.9;
+      }
+    }
+  }
+  .rest-content {
+    .flex(0,0,75%);
+    @media @mobile {
+      .flex(0,0,100%);
+      padding: 10px;
+    }
+    .rest-img {
+      // max-width: 800px;
+      // padding-top: 20px;
+      img {
+        width: 100%;
+      }
     }
   }
   .rest-text, .runnerup-text {
@@ -676,7 +720,7 @@ header {
 
 .a-next {
   clear: both;
-  max-width: 700px;
+  max-width: 800px;
   margin: 30px auto;
 }
 

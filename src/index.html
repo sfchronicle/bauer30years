@@ -45,35 +45,37 @@
 
 
           <div class="rest-name">
-            <div class="rest-yr"><%= restaurant.year %></div>
-            <%= restaurant.name %>
-            <a id="twitter-icon" title="Share on Twitter" class="inline" href="https://twitter.com/intent/tweet?url=http%3A%2F%2Fprojects.sfchronicle.com%2F2016%2F<%= grunt.data.json.project.slug %>%23<%=restaurant.year%>&text=<%= grunt.data.json.project.twitter_text %>&hashtags=<%= grunt.data.json.project.hashtag %>">
-              <i class="fa fa-twitter"></i>
-            </a>
+            <div class="sticky-name">
+              <div class="rest-yr"><%= restaurant.year %></div>
+              <div class="rest-title"><%= restaurant.name %></div>
+              <div class="rest-tweet"><a id="twitter-icon" title="Share on Twitter" class="inline" href="https://twitter.com/intent/tweet?url=http%3A%2F%2Fprojects.sfchronicle.com%2F2016%2F<%= grunt.data.json.project.slug %>%23<%=restaurant.year%>&text=<%= grunt.data.json.project.twitter_text %>&hashtags=<%= grunt.data.json.project.hashtag %>">
+                <i class="fa fa-twitter"></i>
+              </a></div>
+            </div>
           </div>
 
-          <div class="rest-img"><img src= <%= restaurant.photo %>900x900.jpg></img></div>
-          <div class="caption">This is a caption.<%= restaurant.caption %> <span class="byline"><%= restaurant.photographer %>, The Chronicle</span></div>
+          <div class="rest-content">
+            <div class="rest-img"><img src= <%= restaurant.photo %>900x900.jpg></img></div>
+            <div class="caption"><%= restaurant.caption %> <span class="byline"><%= restaurant.photographer %></span></div>
 
-          <div class="rest-text"><%= restaurant.text %></div>
+            <div class="rest-text"><%= restaurant.text %></div>
 
-          <% if (restaurant.runnerup){ %>
-            <div class="runnerup-block">
-              <div class="runnerup-hed">Runner up: <%= restaurant.runnerup %></div>
-              <div class="runnerup-text"><%= restaurant.runnerup_text %></div>
-            </div>
-          <% } %>
-          <% if (restaurant.runnerup2){ %>
-            <div class="runnerup-block">
-              <div class="runnerup-hed">Runner up: <%= restaurant.runnerup2 %></div>
-              <div class="runnerup-text"><%= restaurant.runnerup2_text %></div>
-            </div>
-          <% } %>
-
-          <div class="divider small">
+            <% if (restaurant.runnerup){ %>
+              <div class="runnerup-block">
+                <div class="runnerup-hed">Runner-up: <%= restaurant.runnerup %></div>
+                <div class="runnerup-text"><%= restaurant.runnerup_text %></div>
+              </div>
+            <% } %>
+            <% if (restaurant.runnerup2){ %>
+              <div class="runnerup-block">
+                <div class="runnerup-hed">Runner-up: <%= restaurant.runnerup2 %></div>
+                <div class="runnerup-text"><%= restaurant.runnerup2_text %></div>
+              </div>
+            <% } %>
           </div>
 
         </div>
+        <div class="divider small"></div>
       <% }); %>
     </div>
 
