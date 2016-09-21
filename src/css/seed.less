@@ -223,6 +223,9 @@ footer {
     font-size: 15px;
     text-align: center;
     margin-bottom:0;
+    a {
+      color: #333;
+    }
 }
 .date {
     font-size: 15px;
@@ -249,7 +252,7 @@ footer {
       max-width:800px;
     }
     @media @mobile {
-      font-size: 1.8em;
+      font-size: 30px;
     }
   }
 }
@@ -333,10 +336,30 @@ footer {
     height: 20px;
   }
   margin-top: 5px;
+  @media @mobile {
+    margin-left: 0;
+    margin-top: 0;
+    img {
+      height:15px;
+    }
+  }
 }
 
 .link, .logo-link {
   display: inline-block;
+}
+.link-title {
+  font-family: @banner;
+  a {
+    color: darken(@gray-blue,30%);
+  }
+  text-transform: uppercase;
+  &:hover {
+    a {
+      font-weight: bolder;
+      color: darken(#152131,20%);
+    }
+  }
 }
 
 header {
@@ -534,6 +557,9 @@ header {
   margin: auto;
   margin-top: 10px;
   margin-bottom: 20px;
+  a {
+    color: #333;
+  }
   @media @mobile {
     margin-bottom: 40px;
   }
@@ -565,12 +591,13 @@ header {
   max-width: 800px;
   margin: auto;
   padding: 50px 0;
-  .intro-sign {
-    padding-top: 20px;
-    font-style: italic;
-  }
+  padding-top: 30px;
   @media @tablet {
     padding: 20px;
+  }
+  @media @mobile {
+    font-size: 20px;
+    padding-top: 0;
   }
 }
 
@@ -588,6 +615,8 @@ header {
     margin-top: 20px;
     .runnerup-hed {
       margin: 5px 0;
+      font-style: italic;
+      font-size: 18px;
       @media @mobile {
         padding-bottom: 2px;
         font-size: 16px;
@@ -700,6 +729,9 @@ header {
 
 .divider {
   width: 100%;
+  &.top {
+    width: 80%;
+  }
   margin: auto;
   border-bottom: 1px @dark-gray solid;
   height: 2px;
@@ -749,4 +781,27 @@ header {
   @media @mobile {
     display: none;
   }
+}
+
+// looper at the top -----------------------------------------------------------
+
+#looper{
+  width:100%;
+  @media @tablet {
+    display: none;
+  }
+}
+
+.static-looper {
+  display: none;
+  margin: 0;
+  padding: 0;
+  @media @tablet {
+    display: block;
+  }
+}
+
+#loopercaption {
+  margin: 0 !important;
+  padding-left: 10px !important;
 }

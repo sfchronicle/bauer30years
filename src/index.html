@@ -17,25 +17,26 @@
     <%= t.include("partials/_nav.html") %>
 
     <div class="title-container">
-    <div class="background-img">
-        <div class="dim"></div>
-        <div class="over-img">
-          <h1 class="title long">30 years of restaurant innovation</h1>
-          <div class="deck">Michael Bauer’s timeline of Bay Area dining history</div>
-          <p class="author">By Michael Bauer</a></p>
-          <p class="date">September 2016</p>
-        </div>
-      </div>
+    <video autoplay loop id="looper" class="show-for-large" poster="./assets/video/still.jpg">
+      <source src="./assets/video/looper.mp4" type="video/mp4">
+      Your browser does not support the <code>video</code> element.
+    </video>
+    <div class="full-width-img static-looper">
+      <img src="./assets/video/still.jpg"></img>
     </div>
-    <p class="caption landing">This is a caption.<span class="byline"> Person Person, The Chronicle</span></p>
+    <p class="caption landing" id="loopercaption">This is a caption.<span class="byline"> Person Person, The Chronicle</span></p>
+    </div>
+    <h1 class="title long">The 30 most important Bay Area restaurants of the last 30 years</h1>
+    <p class="author">By <a href="mailto:mbauer@sfchronicle.com">Michael Bauer</a></p>
+    <p class="date">September 2016</p>
+
 
     <div class="intro">
-      It’s not often we take time to look back, reflect and see what brought us to our present day. On my 30th anniversary at The Chronicle, I’ve decided to do just that. I’ve compiled a year-by-year list of the restaurants that moved the dining scene forward, picking the most important restaurant from each of my 30 years. It’s not always the best restaurant of the year — or even the most prominent — but ones that offered something special and made the Bay Area the food epicenter it is today.
-      <div class="intro-sign">— Michael Bauer</div>
+      On his 30th anniversary at The Chronicle, Michael Bauer chooses the most important restaurant from each of his years. It’s not always the best restaurant of the year — or even the most prominent — but rather, the one that offered something special, moved the conversation forward and made the Bay Area the food epicenter it is today.
     </div>
 
 
-    <div class="divider"></div>
+    <div class="divider top"></div>
 
     <div id="stick-here"></div>
 
@@ -48,7 +49,7 @@
             <div class="sticky-name">
               <div class="rest-yr"><%= restaurant.year %></div>
               <div class="rest-title"><%= restaurant.name %></div>
-              <div class="rest-tweet"><a id="twitter-icon" title="Share on Twitter" class="inline" href="https://twitter.com/intent/tweet?url=http%3A%2F%2Fprojects.sfchronicle.com%2F2016%2F<%= grunt.data.json.project.slug %>%23<%=restaurant.year%>&text=<%= grunt.data.json.project.twitter_text %>&hashtags=<%= grunt.data.json.project.hashtag %>">
+              <div class="rest-tweet"><a id="twitter-icon" title="Share on Twitter" class="inline" href="https://twitter.com/intent/tweet?url=http%3A%2F%2Fprojects.sfchronicle.com%2F2016%2F<%= grunt.data.json.project.slug %>%23<%=restaurant.year%>&text=<%= grunt.data.json.project.twitter_text %>: <%= restaurant.name %> - <%= restaurant.year %>&hashtags=<%= grunt.data.json.project.hashtag %>">
                 <i class="fa fa-twitter"></i>
               </a></div>
             </div>
