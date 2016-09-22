@@ -305,6 +305,9 @@ footer {
   font-size: 18px;
   font-family: @body;
   cursor: pointer;
+  @media @mobile {
+    font-size: 16px;
+  }
 
   &.active {
     background: @active-link;
@@ -320,6 +323,9 @@ footer {
     float: right;
     margin: 0 6px;
     padding: 4px 2px;
+    @media @mobile {
+      padding-top: 6px;
+    }
     a {
       color: @gray-blue;
     }
@@ -335,12 +341,12 @@ footer {
     opacity: 1;
     height: 20px;
   }
-  margin-top: 5px;
+  margin-top: 4px;
   @media @mobile {
     margin-left: 0;
-    margin-top: 0;
+    margin-top: 3px;
     img {
-      height:15px;
+      height:20px;
     }
   }
 }
@@ -350,10 +356,14 @@ footer {
 }
 .link-title {
   font-family: @banner;
+  font-size: 13px;
   a {
     color: darken(@gray-blue,30%);
   }
-  text-transform: uppercase;
+  padding-top:8px;
+  vertical-align: top;
+  margin-bottom: 2px;
+  // text-transform: uppercase;
   &:hover {
     a {
       font-weight: bolder;
@@ -627,7 +637,7 @@ header {
     padding-top: 60px;
     .display-flex;
     @media @mobile {
-      padding-top: 40px;
+      padding-top: 0px;
       clear: both;
       display: block;
     }
@@ -658,6 +668,9 @@ header {
     margin-right: 5%;
     position: relative;
     visibility: hidden;
+    // @media @mobile {
+    //   visibility: visible;
+    // }
     font-family: @block-graphics;
     font-size: 30px;
     padding-bottom: 10px;
@@ -705,6 +718,37 @@ header {
         box-shadow: 0 0 6px 0 #696969;
         opacity: 0.9;
       }
+    }
+  }
+  .mobileonly {
+    display: none;
+    padding-bottom: 30px;
+    padding-top: 5px;
+    opacity: 0.9;
+    z-index: -100;
+    background: lighten(@light-gray,5%);
+    .rest-yr, .rest-title, .rest-tweet {
+      @media @mobile {
+        display: inline-block;
+        font-size: 18px;
+        padding-left: 10px;
+        float: left;
+        a {
+          padding-top: 2px;
+          font-size: 18px;
+        }
+      }
+    }
+    .rest-title {
+      font-size: 16px;
+      padding-top: 1px;
+      padding-right: 8px;
+    }
+    @media @mobile {
+      clear: both;
+      display: block;
+      position: relative;
+      visibility: visible;
     }
   }
   .rest-content {
@@ -804,4 +848,89 @@ header {
 #loopercaption {
   margin: 0 !important;
   padding-left: 10px !important;
+}
+
+// link to related story -------------------------------------------------------
+
+.longform {
+  background-image: url("./assets/photos/related.jpg");
+}
+
+.dont-miss-link {
+  max-width: 700px;
+  text-align: center;
+  margin: 2em auto;
+  font-size: 17px;
+
+  .button {
+    width: 200px;
+    margin: auto;
+    background: #e4e4e4;
+    text-transform: uppercase;
+    font-family: @block-graphics;
+    padding: 5px;
+  }
+
+  .story {
+
+  width: 80%;
+  text-align: center;
+  margin: auto;
+  min-height: 400px;
+  background-size: cover;
+  position: relative;
+  background-position: top;
+
+    a {
+        text-decoration: none;
+        color: #333;
+        line-height: 1.2;
+    }
+  }
+
+  .padded {
+    padding: 10px;
+  }
+  .next-story {
+    position: absolute;
+    top: 40%;
+    left: 0;
+    right: 0;
+    color: #fff;
+    z-index:3;
+    font-size:2em;
+    font-family:@med-graphics;
+    text-transform: none;
+    line-height: 1.2;
+    padding: 0 15px;
+    margin: 0 auto;
+
+    p{
+      max-width: 560px;
+    }
+
+    @media @mobile {
+      font-size:1.8em;
+      top:30%;
+    }
+
+
+  }
+  img {
+    width: 80%;
+  }
+}
+
+.dim {
+  display: block;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    opacity: .4;
+    height: 100%;
+    background-color: #000;
+    width: 100%;
+    position: absolute;
+    top: 0;
 }
