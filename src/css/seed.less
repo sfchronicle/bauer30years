@@ -356,11 +356,15 @@ footer {
 }
 .link-title {
   font-family: @banner;
-  font-size: 13px;
+  font-size: 16px;
+  padding-top: 6px;
+  @media @mobile {
+    font-size: 13px;
+    padding-top:8px;
+  }
   a {
     color: darken(@gray-blue,30%);
   }
-  padding-top:8px;
   vertical-align: top;
   margin-bottom: 2px;
   // text-transform: uppercase;
